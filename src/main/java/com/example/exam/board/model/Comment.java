@@ -1,29 +1,26 @@
 package com.example.exam.board.model;
 
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
-
-
 @Entity
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Board {
+public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idx;
-    private String title;
     private String content;
     private String writer;
 
-    @OneToMany(mappedBy = "board")
-    List<Comment> commentList = new ArrayList<>();
+    @ManyToOne
+    @JoinColumn(name="board_idx")
+    private Board board;
 
 }
