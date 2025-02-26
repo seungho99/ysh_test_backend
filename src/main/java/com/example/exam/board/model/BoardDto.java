@@ -10,7 +10,6 @@ public class BoardDto {
         private String content;
         private String writer;
 
-
         public Board toEntity() {
             return Board.builder()
                     .title(title)
