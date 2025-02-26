@@ -1,6 +1,7 @@
-package com.example.exam.board.model;
+package com.example.exam.comment.model;
 
 
+import com.example.exam.board.model.Board;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
